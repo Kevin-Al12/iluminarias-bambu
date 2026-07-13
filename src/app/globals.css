@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffaf4;
+  --foreground: #2c1c10;
+
+  --color-brand-900: #5c2408;
+  --color-brand-800: #7a2e0e;
+  --color-brand-700: #9c3d14;
+  --color-brand-600: #b94a1c;
+  --color-brand-500: #d2691e;
+  --color-brand-400: #e08a45;
+  --color-brand-200: #f4c9a0;
+  --color-brand-100: #fbe3cb;
+  --color-brand-50: #fff5ea;
+
+  --color-wood-900: #2c1c10;
+  --color-wood-800: #3e2416;
+  --color-wood-700: #543018;
+  --color-wood-500: #6b4226;
+  --color-wood-300: #8b5a2b;
+
+  --color-sand-50: #fffaf4;
+  --color-sand-100: #fbf1e4;
+  --color-sand-200: #f3e4cf;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-brand-900: var(--color-brand-900);
+  --color-brand-800: var(--color-brand-800);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-50: var(--color-brand-50);
+
+  --color-wood-900: var(--color-wood-900);
+  --color-wood-800: var(--color-wood-800);
+  --color-wood-700: var(--color-wood-700);
+  --color-wood-500: var(--color-wood-500);
+  --color-wood-300: var(--color-wood-300);
+
+  --color-sand-50: var(--color-sand-50);
+  --color-sand-100: var(--color-sand-100);
+  --color-sand-200: var(--color-sand-200);
+
+  --font-heading: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
