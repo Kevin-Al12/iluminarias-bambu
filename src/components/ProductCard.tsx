@@ -42,7 +42,7 @@ export default function ProductCard({ product }: { product: Product }) {
             alt={img.alt}
             fill
             priority={i === 0}
-            className={`object-contain transition-opacity duration-700 ease-in-out ${
+            className={`object-cover transition-opacity duration-700 ease-in-out ${
               i === active ? "opacity-100" : "opacity-0"
             }`}
             sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
