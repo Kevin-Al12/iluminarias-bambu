@@ -7,7 +7,7 @@ const values = [
   },
   {
     title: "Hecho a mano",
-    text: "Cada lámpara se corta, lija, tiñe y ensambla artesanalmente, sin producción en masa.",
+    text: "Cada lámpara se corta, lija, tiñe y ensambla artesanalmente, con atención al detalle.",
   },
   {
     title: "Diseño a medida",

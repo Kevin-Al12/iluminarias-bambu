@@ -30,6 +30,9 @@ export const products: Product[] = [
     price: 4500,
     images: [
       { src: "/images/products/trio-aro-rustico-1.jpeg", alt: "Lámpara colgante Trío Aro Rústico instalada en terraza con techo de policarbonato" },
+      { src: "/images/products/trio-aro-rustico-2.jpeg", alt: "Trío Aro Rústico, vista de cerca de las tres pantallas de bambú encendidas" },
+      { src: "/images/products/trio-aro-rustico-3.jpeg", alt: "Trío Aro Rústico instalado en techo de madera, vista general con columna" },
+      { src: "/images/products/trio-aro-rustico-4.jpeg", alt: "Trío Aro Rústico, vista frontal con acabado oscuro y cuerda de yute" },
     ],
   },
   {
