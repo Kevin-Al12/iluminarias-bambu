@@ -1,30 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { Product } from "@/data/products";
 import { buildProductMessage, buildWhatsAppLink, formatPriceRD } from "@/lib/whatsapp";
 
 export default function ProductCard({ product }: { product: Product }) {
   const [active, setActive] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
   const hasMultiple = product.images.length > 1;
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const goTo = (index: number) => {
     const count = product.images.length;
     setActive(((index % count) + count) % count);
   };
 
+  useEffect(() => {
+    if (!isHovering || !hasMultiple) return;
+
+    intervalRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % product.images.length);
+    }, 1600);
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isHovering, hasMultiple, product.images.length]);
+
   return (
     <div className="group flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-sm transition-shadow hover:shadow-xl">
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-wood-900">
-        <Image
-          src={product.images[active].src}
-          alt={product.images[active].alt}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
-        />
-        <span className="absolute left-3 top-3 rounded-full bg-wood-900/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+      <div
+        className="relative aspect-[4/3] w-full overflow-hidden bg-wood-900"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {product.images.map((img, i) => (
+          <Image
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            fill
+            priority={i === 0}
+            className={`object-contain transition-opacity duration-700 ease-in-out ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+          />
+        ))}
+        <span className="absolute left-3 top-3 z-10 rounded-full bg-wood-900/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
           {product.tagline}
         </span>
 
