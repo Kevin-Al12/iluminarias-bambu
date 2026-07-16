@@ -31,7 +31,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-sm transition-shadow hover:shadow-xl">
       <div
-        className="relative aspect-[4/3] w-full overflow-hidden bg-wood-900"
+        className="relative aspect-[4/5] w-full overflow-hidden bg-wood-900"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -58,7 +58,7 @@ export default function ProductCard({ product }: { product: Product }) {
               type="button"
               aria-label={`Foto anterior de ${product.name}`}
               onClick={() => goTo(active - 1)}
-              className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-wood-900/60 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 hover:bg-wood-900/80"
+              className="absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-wood-900/60 text-white opacity-80 backdrop-blur-sm transition-opacity hover:bg-wood-900/80 md:opacity-0 md:group-hover:opacity-100"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -68,7 +68,7 @@ export default function ProductCard({ product }: { product: Product }) {
               type="button"
               aria-label={`Foto siguiente de ${product.name}`}
               onClick={() => goTo(active + 1)}
-              className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-wood-900/60 text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 hover:bg-wood-900/80"
+              className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-wood-900/60 text-white opacity-80 backdrop-blur-sm transition-opacity hover:bg-wood-900/80 md:opacity-0 md:group-hover:opacity-100"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

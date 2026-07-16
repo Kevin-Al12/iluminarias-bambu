@@ -36,7 +36,6 @@ export const products: Product[] = [
       { src: "/images/products/trio-aro-rustico-2.jpeg", alt: "Trío Aro Rústico, vista de cerca de las tres pantallas de bambú encendidas" },
       { src: "/images/products/trio-aro-rustico-3.jpeg", alt: "Trío Aro Rústico instalado en techo de madera, vista general con columna" },
       { src: "/images/products/trio-aro-rustico-4.jpeg", alt: "Trío Aro Rústico, vista frontal con acabado oscuro y cuerda de yute" },
-      { src: "/images/products/trio-aro-rustico-5.jpeg", alt: "Trío Aro Rústico instalado sobre mesa de comedor de bambú" },
     ],
   },
   {
@@ -67,8 +66,6 @@ export const products: Product[] = [
     environments: ["Comedor", "Cocina", "Pérgola"],
     images: [
       { src: "/images/products/cuarteto-barril-yute-1.jpeg", alt: "Cuarteto Barril Yute, foto de producto con cuatro bombillos" },
-      { src: "/images/products/cuarteto-barril-yute-2.jpeg", alt: "Cuarteto Barril Yute instalado bajo viga de pérgola, vista desde abajo" },
-      { src: "/images/products/cuarteto-barril-yute-3.jpeg", alt: "Cuarteto Barril Yute instalado en techo con roseta decorativa, sala de estar" },
     ],
   },
   {
@@ -173,6 +170,7 @@ export const products: Product[] = [
     environments: ["Salón", "Interior"],
     images: [
       { src: "/images/products/trio-conico-1.jpeg", alt: "Trío Cónico Elegante instalado en techo blanco" },
+      { src: "/images/products/trio-conico-2.jpeg", alt: "Trío Cónico Elegante instalado sobre mesa de comedor de bambú" },
     ],
   },
   {
@@ -187,6 +185,8 @@ export const products: Product[] = [
     environments: ["Restaurante", "Cabaña", "Boutique"],
     images: [
       { src: "/images/products/trio-yute-premium-1.jpeg", alt: "Trío Yute Premium, foto de estudio sobre pared de madera oscura" },
+      { src: "/images/products/trio-yute-premium-2.jpeg", alt: "Trío Yute Premium instalado bajo viga de pérgola, vista desde abajo" },
+      { src: "/images/products/trio-yute-premium-3.jpeg", alt: "Trío Yute Premium instalado en techo con roseta decorativa, sala de estar" },
     ],
   },
   {
