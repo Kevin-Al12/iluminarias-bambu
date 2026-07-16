@@ -8,16 +8,18 @@ import { buildProductMessage, buildWhatsAppLink, formatPriceRD } from "@/lib/wha
 export default function ProductCard({ product }: { product: Product }) {
   const [active, setActive] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
+  const [autoAdvancePaused, setAutoAdvancePaused] = useState(false);
   const hasMultiple = product.images.length > 1;
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const goTo = (index: number) => {
     const count = product.images.length;
     setActive(((index % count) + count) % count);
+    setAutoAdvancePaused(true);
   };
 
   useEffect(() => {
-    if (!isHovering || !hasMultiple) return;
+    if (!isHovering || !hasMultiple || autoAdvancePaused) return;
 
     intervalRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % product.images.length);
@@ -26,7 +28,7 @@ export default function ProductCard({ product }: { product: Product }) {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [isHovering, hasMultiple, product.images.length]);
+  }, [isHovering, hasMultiple, autoAdvancePaused, product.images.length]);
 
   return (
     <div className="group flex flex-col overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-sm transition-shadow hover:shadow-xl">
@@ -84,7 +86,10 @@ export default function ProductCard({ product }: { product: Product }) {
                 key={img.src}
                 type="button"
                 aria-label={`Ver foto ${i + 1} de ${product.name}`}
-                onClick={() => setActive(i)}
+                onClick={() => {
+                  setActive(i);
+                  setAutoAdvancePaused(true);
+                }}
                 className={`h-2 rounded-full transition-all ${
                   i === active ? "w-5 bg-white" : "w-2 bg-white/50"
                 }`}
