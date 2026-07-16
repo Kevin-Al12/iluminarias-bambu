@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { products } from "@/data/products";
 import { buildGeneralMessage, buildWhatsAppLink } from "@/lib/whatsapp";
 
 export default function Hero() {
@@ -64,7 +65,7 @@ export default function Hero() {
         >
           <div>
             <p className="font-heading text-2xl font-semibold text-white sm:text-3xl">
-              +11
+              +{products.length}
             </p>
             <p className="text-xs text-sand-100/80 sm:text-sm">
               Modelos artesanales

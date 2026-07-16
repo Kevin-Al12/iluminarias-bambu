@@ -98,9 +98,20 @@ export default function ProductCard({ product }: { product: Product }) {
         <h3 className="font-heading text-xl font-semibold text-wood-900">
           {product.name}
         </h3>
-        <p className="flex-1 text-sm text-wood-700">{product.description}</p>
+        <p className="text-sm text-wood-700">{product.description}</p>
 
-        <div className="flex items-center justify-between pt-2">
+        <div className="flex flex-wrap gap-1.5">
+          {product.environments.map((env) => (
+            <span
+              key={env}
+              className="rounded-full bg-sand-200 px-2.5 py-1 text-xs font-medium text-wood-700"
+            >
+              {env}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-auto flex items-center justify-between pt-2">
           <span className="font-heading text-lg font-semibold text-brand-700">
             {formatPriceRD(product.price)}
           </span>
